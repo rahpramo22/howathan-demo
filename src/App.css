@@ -1,38 +1,81 @@
-.App {
-  text-align: center;
+.container{
+  margin: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.gridRoot{
+  overflow-y: scroll;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.stickyHeader{
+  position: sticky;
+  top: 0;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.chatbox {
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+.chatWindow {
+  overflow-y: scroll;
+  position: absolute;
+  padding: 10px 0px;
+  top: 0;
+  bottom: 150px;
+}
+
+.inputWrapper {
+  background-color: #fff;
+  position: absolute;
+  bottom: 100px;
+  width: 100%;
+}
+
+.inputField {
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
+.sendButton {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.messages {
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 8px;
+  margin: 5px;
+  font-size: 18px;
+}
+
+.feather{
+  padding-left: 5px;
+}
+
+.css-1m9128y {
+  z-index: 1;
+  position: absolute;
+  bottom: 25px;
+}
+
+.defaultview{
+  display: flex;
+  gap: 6px;
+  height: 220px;
+  margin-top: 50%;
+}
+
+.loading{
+  min-height: 600px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  align-items: center;
 }
