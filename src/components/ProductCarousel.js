@@ -8,6 +8,7 @@ const useStyles = makeStyles((theme) => ({
     background: "url(../images/bg-product.jpg) !important",
     backgroundSize: "cover !important",
     backgroundPosition: "top center !important",
+    margin: "10px 0",
   },
   itemContainer: {
     display: "flex",

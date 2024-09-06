@@ -26,7 +26,7 @@ export default function ProductCollageList({ productData: data }) {
     <Grid2 container spacing={2} sx={{ justifyContent: "center", margin: "5px 0", justifyContent: "flex-start",
        display: "flex",
       flexDirection: "row",
-      overflowX: "scroll",
+      overflowX: "hidden",
       flexWrap: "nowrap"}}>
       {productItems.map((item) => (
         <Paper elevation={2} sx={{ padding: 1, maxWidth: "300px", minWidth:"250px", backgroundColor:"antiquewhite" }}>

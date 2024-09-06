@@ -36,9 +36,10 @@ function App() {
   const [productInfo, setProductInfo] = useState({});
   const [designName, setDesignName] = useState([]);
   const [dataLoaded, setDataLoaded] = useState(true);
+  const [count, setCount] = useState(0);
 
-  const getProductsbyDesign = (productDesign='grid') => {
-    const productJson = productInfo[productDesign] || [];
+  const getProductsbyDesign = (productDesign='grid', index) => {
+    const productJson = productInfo[index] || [];
     switch (productDesign) {
       case "carousel":
         return (
@@ -59,12 +60,7 @@ function App() {
       case "default":
         return (
           <>
-            <ProductCarousel productData={productJson}>
-              carousel
-            </ProductCarousel>
-            <ProductCollageList productData={productJson}>
-              collage view
-            </ProductCollageList>
+          No result found
           </>
         );
     }
@@ -82,8 +78,10 @@ function App() {
         console.log(jsonResponse, jsonResponse.products, jsonResponse.view);
         const newDesign = [...designName, jsonResponse.view?.name]
         setDesignName(newDesign);
-        const newData={};
-        newData[newDesign] = jsonResponse.products;
+        const newData={...productInfo};
+        newData[count] =  jsonResponse.products;
+        let updatCount = count + 1;
+        setCount(updatCount);
         setProductInfo(newData);
         setDataLoaded(true);
       }
@@ -105,11 +103,14 @@ function App() {
       </AppBar>
 
       {/* Main Content Area */}
-      <Box sx={{flexGrow: 1, padding: 2, mt: "100px", border: "1px solid grey"}}>
-        <Grid2 container spacing={2}>
+      <Box sx={{flexGrow: 1, padding: 2, mt: "80px", border: "1px solid grey", height: "86vh"}}>
+        <Grid2 container spacing={2} sx={{height: "100%"}}>
           <Grid2
             size={4}
             display="flex"
+            minHeight={600}
+            overflowY="scroll"
+            maxHeight={800}
           >
             <Box sx={{flexGrow: 1, position:"relative"}}>
               <Chatbox fetchApiWithPrompt={fetchApiWithPrompt}></Chatbox>
@@ -168,14 +169,14 @@ function App() {
               {dataLoaded && (
                 <Box
                   sx={{
-                    minHeight: 400,
+                    height: "60vh",
                     flexGrow: 1,
                     overflowY: "auto",
                     margin: "12px",
                     zIndex: 2,
                   }}
                 >
-                  {designName.map(item=>getProductsbyDesign(item))}
+                  {designName.map((item,index)=>getProductsbyDesign(item, index))}
                 </Box>
               )}
               {/* Footer with Fixed Height */}

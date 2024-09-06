@@ -34,7 +34,7 @@ const Header = () => {
           <Link href="/" underline="none" sx={{ color: "#ffffff" }}>
             <Box sx={{ display: "flex", alignItems: "center", gap: "8px" }}>
               <img src="./logo.png" alt="E-Shop Logo" width="50" height="50" />
-              <Typography variant="h5" component="div" color="inherit">
+              <Typography variant="h5" component="div" color="inherit" sx={{fontSize: "18px"}}>
                 E-Shop
               </Typography>
             </Box>
@@ -72,7 +72,7 @@ const Header = () => {
               justifyContent: "end",
             }}
           >
-            <Button>Publish</Button>
+            <Button variant="contained">Publish</Button>
             <Link
               sx={{
                 display: "flex",
@@ -83,25 +83,7 @@ const Header = () => {
               }}
               underline="hover"
             >
-              <Typography component="div">Hello, sign in</Typography>
-              <Typography variant="h6" component="div">
-                Account & lists
-              </Typography>
-            </Link>
-            <Link
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                flexDirection: "column",
-                alignItems: "flex-start",
-                color: "inherit",
-              }}
-              underline="hover"
-            >
-              <Typography component="div">Returns</Typography>
-              <Typography variant="h6" component="div">
-                & orders
-              </Typography>
+              <Typography component="div">Sign in</Typography>
             </Link>
             <Box
               sx={{
@@ -113,9 +95,6 @@ const Header = () => {
               <IconButton aria-label="cart" color="inherit">
                 <ShoppingCartIcon />
               </IconButton>
-              {/* <Typography variant="h6" component="div">
-                Cart
-              </Typography> */}
             </Box>
           </Box>
         </Grid>

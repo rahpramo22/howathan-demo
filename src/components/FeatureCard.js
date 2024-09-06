@@ -9,7 +9,7 @@ import {
 
 const ProductCard = ({product: {product_name, product_description, main_image_url}}) => {
   return (
-    <Card sx={{maxWidth: 260, minWidth: 100}}>
+    <Card sx={{maxWidth: 260, minWidth: 100, justifyContent:"center", margin:"10px 0"}}>
       <CardActionArea>
         <CardMedia component="img" height="140" image={main_image_url} alt={product_name}
               sx={{ aspectRatio: '4/3', objectFit: 'contain', margin: "5px 0px" }} />
