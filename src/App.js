@@ -105,14 +105,13 @@ function App() {
       </AppBar>
 
       {/* Main Content Area */}
-      <Box sx={{flexGrow: 1, padding: 2, mt: "80px", border: "1px solid grey", height: "86vh"}}>
+      <Box sx={{flexGrow: 1, padding: 2, paddingLeft: '15px', mt: "80px", border: "1px solid grey", height: "86vh"}}>
         <Grid2 container spacing={2} sx={{height: "100%"}}>
           <Grid2
             size={4}
             display="flex"
-            minHeight={600}
+            height='100%'
             overflowY="scroll"
-            maxHeight={800}
           >
             <Box sx={{flexGrow: 1, position:"relative"}}>
               <Chatbox fetchApiWithPrompt={fetchApiWithPrompt}></Chatbox>

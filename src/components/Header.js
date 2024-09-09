@@ -72,7 +72,6 @@ const Header = () => {
               justifyContent: "end",
             }}
           >
-            <Button variant="contained">Publish</Button>
             <Link
               sx={{
                 display: "flex",
