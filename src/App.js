@@ -39,7 +39,8 @@ function App() {
   const [count, setCount] = useState(0);
 
   const getProductsbyDesign = (productDesign='grid', index) => {
-    const productJson = productInfo[index] || [];
+    const length = designName.length - 1;
+    const productJson = productInfo[length-index] || [];
     switch (productDesign) {
       case "carousel":
         return (
@@ -76,7 +77,8 @@ function App() {
       if (response.ok) {
         const jsonResponse = await response.json();
         console.log(jsonResponse, jsonResponse.products, jsonResponse.view);
-        const newDesign = [...designName, jsonResponse.view?.name]
+        const newDesign = [...designName];
+        newDesign.unshift(jsonResponse.view?.name);
         setDesignName(newDesign);
         const newData={...productInfo};
         newData[count] =  jsonResponse.products;
